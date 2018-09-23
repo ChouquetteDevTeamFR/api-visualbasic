@@ -7,9 +7,9 @@ Module MAJ
             Dim lastversion As String = maj.DownloadString("lien du fichier texte contenant la version")
             Dim downloadlink As String = maj.DownloadString("lien du fichier texte contenant le lien de la mise à jour")
             If myversion = lastversion Then
-                MsgBox("Virus Maker est à jour ! (" & lastversion & ")", MsgBoxStyle.Information, "CHECK MISE A JOUR")
+                MsgBox("Le logiciel est à jour ! (" & lastversion & ")", MsgBoxStyle.Information, "CHECK MISE A JOUR")
             Else
-                MsgBox("Virus Maker n'est pas à jour !" & vbNewLine & "La dernière version est : " & lastversion, MsgBoxStyle.Critical, "CHECK MISE A JOUR")
+                MsgBox("Le logiciel n'est pas à jour !" & vbNewLine & "La dernière version est : " & lastversion, MsgBoxStyle.Critical, "CHECK MISE A JOUR")
                 WebBrowser1.Navigate(downloadlink)
             End If
         Catch ex As Exception
