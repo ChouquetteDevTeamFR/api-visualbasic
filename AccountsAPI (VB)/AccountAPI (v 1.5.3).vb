@@ -5,9 +5,9 @@ Module AccountAPI
         MessageBox.Show(text, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning)
     End Sub
     Public Sub Create_Account(ByVal User As String, ByVal Pass As String)
-        Dim User1 As String = "" '' utilisateur ftp
-        Dim Pass1 As String = "653421mate" '' mot de passe ftp
-        Dim Service_Register As String = ("") ''Votre FTP "ftp://utilisateur@hôte/dossier(htdocs ou public html pour les hebergeurs gratuits)/dossier réservé aux comptes"
+        Dim User1 As String = "userftp" '' utilisateur ftp
+        Dim Pass1 As String = "mdpftp" '' mot de passe ftp
+        Dim Service_Register As String = ("ftplink") ''Votre FTP "ftp://utilisateur@hôte/dossier(htdocs ou public html pour les hebergeurs gratuits)/dossier réservé aux comptes"
         Dim accounttempfile As String = (My.Computer.FileSystem.SpecialDirectories.Temp & "\" & User & ".ini")
         Dim tempparam1 As String = (My.Computer.FileSystem.SpecialDirectories.Temp & "\" & User & "_param1.ini")
         Dim tempparam2 As String = (My.Computer.FileSystem.SpecialDirectories.Temp & "\" & User & "_param2.ini")
@@ -55,14 +55,14 @@ Module AccountAPI
         Kill(accounttempfile)
     End Sub
     Public Sub WriteParams(ByVal User As String)
-        Dim ServiceCheckParam1 As String = ("" & User & "_param1.json") ''Vôtre ftp comme avant
-        Dim ServiceCheckParam2 As String = ("" & User & "_param2.json") '' de même
+            Dim ServiceCheckParam1 As String = ("ftplink" & User & "_param1.json") ''Vôtre ftp comme avant
+            Dim ServiceCheckParam2 As String = ("ftplink" & User & "_param2.json") '' de même
         Dim paramsfile1 As String = (My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\param1.json")
         Dim paramsfile2 As String = (My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\param2.json")
         Dim tempfile1 As String = (My.Computer.FileSystem.SpecialDirectories.Temp & "\_param1.json")
         Dim tempfile2 As String = (My.Computer.FileSystem.SpecialDirectories.Temp & "\_param2.json")
-        Dim User1 As String = "" '' user ftp
-        Dim Pass1 As String = "" '' mot de passe ftp
+            Dim User1 As String = "userftp" '' user ftp
+            Dim Pass1 As String = "mdpftp" '' mot de passe ftp
         My.Computer.Network.DownloadFile(ServiceCheckParam1, tempfile1, User1, Pass1)
         My.Computer.Network.DownloadFile(ServiceCheckParam2, tempfile2, User1, Pass1)
         Dim sw1 As New StreamWriter(paramsfile1)
